@@ -1,0 +1,233 @@
+.header-logica-conjuntos {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  color: white;
+}
+
+.options-logica-conjuntos {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.nav-logica-conjuntos {
+  width: 25%;
+  height: 50px;
+  transform-origin: 0.5s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0.5em;
+}
+.nav-logica-conjuntos:hover {
+  background-color: #172031;
+}
+.contenedor-presentacion {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+.parrafo-header {
+  font-size: 15px;
+  width: 45%;
+  height: auto;
+  color: #647b90;
+  text-align: center;
+}
+.materia-header {
+  font-size: 13px;
+  width: 40%;
+  height: auto;
+  color: #facc15;
+  text-transform: uppercase;
+}
+.img-conjunto {
+  margin-top: 30px;
+  width: 100px;
+  height: 100px;
+}
+.contenedor-info-conjuntos {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
+  overflow: hidden;
+}
+
+
+.info-detalle-conjunto {
+  width: 28%;
+  height: 180px;
+  border-radius: 5px;
+  border: none;
+  background-color: #1a2331;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.contenedor-titulo-svg {
+  width: 90%;
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+}
+.contenedor-svg {
+  width: 15%;
+  height: 90%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #facc15;
+}
+.titulo-conjunto {
+  font-weight: bold;
+}
+.detalle-conjunto {
+  width: 90%;
+  height: 50%;
+  text-align: left;
+  color: #647b90;
+}
+
+/* media queries */
+@media (max-width: 1024px){
+  .options-logica-conjuntos {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .nav-logica-conjuntos {
+    width: 45%;
+    height: 50px;
+    transform-origin: 0.5s;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 0.5em;
+  }
+  .parrafo-header {
+    font-size: 15px;
+    width: 80%;
+    height: auto;
+    color: #647b90;
+    text-align: center;
+  }
+  .materia-header {
+    font-size: 13px;
+    width: 100%;
+    height: auto;
+    color: #facc15;
+    text-transform: uppercase;
+  }
+  .img-conjunto {
+    padding-top: 30px;
+    width: 100px;
+    height: 120px;
+  }
+  .info-detalle-conjunto {
+    width: 70%;
+    height: 180px;
+    border-radius: 5px;
+    border: none;
+    background-color: #1a2331;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    border: 1px solid red;
+  }
+  .contenedor-svg {
+    width: 10%;
+    height: 90%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #facc15;
+  }
+}
+@media(max-width: 425px){
+  .options-logica-conjuntos {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .nav-logica-conjuntos {
+    width: 45%;
+    height: 50px;
+    transform-origin: 0.5s;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 0.5em;
+  }
+  .parrafo-header {
+    font-size: 15px;
+    width: 80%;
+    height: auto;
+    color: #647b90;
+    text-align: center;
+  }
+  .materia-header {
+    font-size: 13px;
+    width: 100%;
+    height: auto;
+    color: #facc15;
+    text-transform: uppercase;
+  }
+  .img-conjunto {
+    padding-top: 30px;
+    width: 100px;
+    height: 120px;
+  }
+  .info-detalle-conjunto {
+    width: 90%;
+    height: 180px;
+    border-radius: 5px;
+    border: none;
+    background-color: #1a2331;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+  }
+}
