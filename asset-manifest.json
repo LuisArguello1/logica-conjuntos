@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/logica-conjuntos/static/css/main.7773dd49.css",
+    "main.css": "/logica-conjuntos/static/css/main.58e96c9c.css",
     "main.js": "/logica-conjuntos/static/js/main.eb5a7cff.js",
     "static/js/453.e34c3016.chunk.js": "/logica-conjuntos/static/js/453.e34c3016.chunk.js",
     "static/media/conjuntoImg.png": "/logica-conjuntos/static/media/conjuntoImg.7c08871513875b3f2c02.png",
@@ -22,12 +22,12 @@
     "static/media/creador.svg": "/logica-conjuntos/static/media/creador.ec6184433eeeac44ec4cd1606e7a5d45.svg",
     "static/media/twiter.svg": "/logica-conjuntos/static/media/twiter.f7b8d9abe12257f15ce9b69fc149cbfa.svg",
     "static/media/union.svg": "/logica-conjuntos/static/media/union.65ade5fc005646eca8d908b49f6da672.svg",
-    "main.7773dd49.css.map": "/logica-conjuntos/static/css/main.7773dd49.css.map",
+    "main.58e96c9c.css.map": "/logica-conjuntos/static/css/main.58e96c9c.css.map",
     "main.eb5a7cff.js.map": "/logica-conjuntos/static/js/main.eb5a7cff.js.map",
     "453.e34c3016.chunk.js.map": "/logica-conjuntos/static/js/453.e34c3016.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7773dd49.css",
+    "static/css/main.58e96c9c.css",
     "static/js/main.eb5a7cff.js"
   ]
 }
