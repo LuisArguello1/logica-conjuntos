@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/logica-conjuntos/static/css/main.7773dd49.css",
+    "main.js": "/logica-conjuntos/static/js/main.eb5a7cff.js",
+    "static/js/453.e34c3016.chunk.js": "/logica-conjuntos/static/js/453.e34c3016.chunk.js",
+    "static/media/conjuntoImg.png": "/logica-conjuntos/static/media/conjuntoImg.7c08871513875b3f2c02.png",
+    "static/media/Universidad-logo.png": "/logica-conjuntos/static/media/Universidad-logo.847da5af23d469dd1919.png",
+    "static/media/instagram.svg": "/logica-conjuntos/static/media/instagram.dc39bac0b9005219396cb633b70b82cc.svg",
+    "static/media/whatsapp.svg": "/logica-conjuntos/static/media/whatsapp.97c38b50f32f977d84cde9e870d0abfe.svg",
+    "static/media/correo.svg": "/logica-conjuntos/static/media/correo.54e9be3e0217e3e891244e616f6e12d0.svg",
+    "static/media/click.svg": "/logica-conjuntos/static/media/click.f56ad1ae376d0d67179d751a1b19f35d.svg",
+    "static/media/youtube.svg": "/logica-conjuntos/static/media/youtube.2f4b57da63557a7485ec773d0818245f.svg",
+    "index.html": "/logica-conjuntos/index.html",
+    "static/media/telefono.svg": "/logica-conjuntos/static/media/telefono.d0038d5e9265c5031b30fb0729021d21.svg",
+    "static/media/google.svg": "/logica-conjuntos/static/media/google.d16ed033d9a720ec7aaa015595245895.svg",
+    "static/media/salir.svg": "/logica-conjuntos/static/media/salir.da5d4d6174e00ac4ea821e3a1c7804cf.svg",
+    "static/media/informacion.svg": "/logica-conjuntos/static/media/informacion.42feeea3edc5417f7ae982575d195938.svg",
+    "static/media/institucion.svg": "/logica-conjuntos/static/media/institucion.63b830dd734dc4b7b3266505f92d300c.svg",
+    "static/media/diferencia.svg": "/logica-conjuntos/static/media/diferencia.f9e7a243617f9f0973c2817a8b2b6359.svg",
+    "static/media/interseccion.svg": "/logica-conjuntos/static/media/interseccion.0eb259634ef5a95080cd48836e3a4528.svg",
+    "static/media/complemento.svg": "/logica-conjuntos/static/media/complemento.106499ba97d65e8a8cf9c2c04f2332d1.svg",
+    "static/media/creador.svg": "/logica-conjuntos/static/media/creador.ec6184433eeeac44ec4cd1606e7a5d45.svg",
+    "static/media/twiter.svg": "/logica-conjuntos/static/media/twiter.f7b8d9abe12257f15ce9b69fc149cbfa.svg",
+    "static/media/union.svg": "/logica-conjuntos/static/media/union.65ade5fc005646eca8d908b49f6da672.svg",
+    "main.7773dd49.css.map": "/logica-conjuntos/static/css/main.7773dd49.css.map",
+    "main.eb5a7cff.js.map": "/logica-conjuntos/static/js/main.eb5a7cff.js.map",
+    "453.e34c3016.chunk.js.map": "/logica-conjuntos/static/js/453.e34c3016.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7773dd49.css",
+    "static/js/main.eb5a7cff.js"
+  ]
+}
