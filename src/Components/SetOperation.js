@@ -39,7 +39,7 @@ const SetOperation = ({
       Swal.fire({
         position: "center",
         icon: "error",
-        title: "Error, ingresa solo números separados por comas (ej. 1,2,3)",
+        title: "Error, ingresa solo datos separados por comas (ej. 1,2,3)",
         showConfirmButton: false,
         timer: 4000,
       });
@@ -88,10 +88,10 @@ const SetOperation = ({
           </div>
         </div>
         <div className="contenedor-btn-logica">
-          <button class="button" onClick={() => handleConjuntoA_ConjuntoB()}>
+          <button className="button" onClick={() => handleConjuntoA_ConjuntoB()}>
             Ingresar Datos
           </button>
-          <button class="button" onClick={() => limpiarEntradas()}>
+          <button className="button" onClick={() => limpiarEntradas()}>
             Limpiar
           </button>
         </div>

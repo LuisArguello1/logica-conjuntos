@@ -347,7 +347,7 @@
     cursor: pointer;
   }
 }
-@media(max-width: 425px){
+@media(max-width: 500px){
   .contenedor-cards-creadores {
     width: 100%;
     height: 60%;
@@ -387,6 +387,15 @@
     font-size: 8px;
     word-wrap: break-word;
   }
+  .contenedor-enlaces-aling-left{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.50em;
+  }
   .img-creador {
     width: 70%;
     height: 30%;
@@ -398,6 +407,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+
   }
   .enlaces-decoracion {
     width: 100%;
