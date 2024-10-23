@@ -1,0 +1,14 @@
+.texto-conjunto-interseccionABC{
+    font-size: 14px;
+    font-weight: bold;
+    text-anchor: middle; /* Centrar el texto horizontalmente */
+    fill: rgb(255, 255, 255); /* Color del texto */
+    cursor: pointer; /* Cambiar cursor al pasar sobre el texto */
+}
+.texto-conjunto-interseccion{
+    font-size: 22px;
+    font-weight: bold;
+    text-anchor: middle; /* Centrar el texto horizontalmente */
+    fill: rgb(255, 255, 255); /* Color del texto */
+    cursor: pointer; /* Cambiar cursor al pasar sobre el texto */
+}

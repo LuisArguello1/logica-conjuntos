@@ -5,7 +5,10 @@ import Operation from "./Components/Operation";
 import Visualizer from "./Components/Visualizer";
 import VennDiagram from "./Components/VennDiagram";
 import Footer from "./Components/Footer";
+import AppConjuntos3 from "./AppConjuntos3";
 import { useState } from "react";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+
 
 function App() {
   const [ConjuntoA, setConjuntoA] = useState([]);
@@ -262,40 +265,53 @@ function App() {
   };
   return (
     <div className="App">
-      <Header></Header>
-      <SetOperation
-        setConjuntoA={setConjuntoA}
-        setConjuntoB={setConjuntoB}
-        ConjuntoA={ConjuntoA}
-        ConjuntoB={ConjuntoB}
-        MostrarResultado={MostrarResultado}
-        setMostrarResultados={setMostrarResultados}
-      ></SetOperation>
-      <VennDiagram
-        ConjuntoA={ConjuntoA}
-        ConjuntoB={ConjuntoB}
-        MostrarResultado={MostrarResultado}
-      ></VennDiagram>
-      <Operation
-        onOperation={handleOperacion}
-        MostrarResultado={MostrarResultado}
-        MostrarAyuda={MostrarAyuda}
-        setMostrarAyuda = {setMostrarAyuda}
-        handleHelp={handleHelp}
-        Select={Select}
-        obtenerContenido={obtenerContenido}
-      ></Operation>
-      <Visualizer
-        Union={Union}
-        Interseccion={Interseccion}
-        Diferencia={Diferencia}
-        DiferenciaBA={DiferenciaBA}
-        ComplementoA={ComplementoA}
-        ComplementoB={ComplementoB}
-        DiferenciaAsimetrica={DiferenciaAsimetrica}
-        MostrarOpciones={MostrarOpciones}
-      ></Visualizer>
-      <Footer></Footer>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <div className='tipo-ruta-name'>2 Conjuntos</div>
+              <Header></Header>
+              <SetOperation
+                setConjuntoA={setConjuntoA}
+                setConjuntoB={setConjuntoB}
+                ConjuntoA={ConjuntoA}
+                ConjuntoB={ConjuntoB}
+                MostrarResultado={MostrarResultado}
+                setMostrarResultados={setMostrarResultados}
+              ></SetOperation>
+              <VennDiagram
+                ConjuntoA={ConjuntoA}
+                ConjuntoB={ConjuntoB}
+                MostrarResultado={MostrarResultado}
+              ></VennDiagram>
+              <Operation
+                onOperation={handleOperacion}
+                MostrarResultado={MostrarResultado}
+                MostrarAyuda={MostrarAyuda}
+                setMostrarAyuda = {setMostrarAyuda}
+                handleHelp={handleHelp}
+                Select={Select}
+                obtenerContenido={obtenerContenido}
+              ></Operation>
+              <Visualizer
+                Union={Union}
+                Interseccion={Interseccion}
+                Diferencia={Diferencia}
+                DiferenciaBA={DiferenciaBA}
+                ComplementoA={ComplementoA}
+                ComplementoB={ComplementoB}
+                DiferenciaAsimetrica={DiferenciaAsimetrica}
+                MostrarOpciones={MostrarOpciones}
+              ></Visualizer>
+              <Footer></Footer>
+            </>
+          }></Route>
+
+          {/* Rutas paginas */}
+          <Route path="/AppConjuntos3" element={<AppConjuntos3></AppConjuntos3>}></Route>
+          <Route path="*" element={<Navigate to="/"></Navigate>}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
