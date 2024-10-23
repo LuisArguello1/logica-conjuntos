@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/logica-conjuntos/static/css/main.a3348a5f.css",
-    "main.js": "/logica-conjuntos/static/js/main.a4b7e4fb.js",
+    "main.css": "/logica-conjuntos/static/css/main.7789d2a1.css",
+    "main.js": "/logica-conjuntos/static/js/main.2b62cec7.js",
     "static/js/453.e34c3016.chunk.js": "/logica-conjuntos/static/js/453.e34c3016.chunk.js",
     "static/media/conjuntoImg.png": "/logica-conjuntos/static/media/conjuntoImg.7c08871513875b3f2c02.png",
     "static/media/Universidad-logo.png": "/logica-conjuntos/static/media/Universidad-logo.847da5af23d469dd1919.png",
@@ -22,12 +22,12 @@
     "static/media/creador.svg": "/logica-conjuntos/static/media/creador.ec6184433eeeac44ec4cd1606e7a5d45.svg",
     "static/media/twiter.svg": "/logica-conjuntos/static/media/twiter.f7b8d9abe12257f15ce9b69fc149cbfa.svg",
     "static/media/union.svg": "/logica-conjuntos/static/media/union.65ade5fc005646eca8d908b49f6da672.svg",
-    "main.a3348a5f.css.map": "/logica-conjuntos/static/css/main.a3348a5f.css.map",
-    "main.a4b7e4fb.js.map": "/logica-conjuntos/static/js/main.a4b7e4fb.js.map",
+    "main.7789d2a1.css.map": "/logica-conjuntos/static/css/main.7789d2a1.css.map",
+    "main.2b62cec7.js.map": "/logica-conjuntos/static/js/main.2b62cec7.js.map",
     "453.e34c3016.chunk.js.map": "/logica-conjuntos/static/js/453.e34c3016.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a3348a5f.css",
-    "static/js/main.a4b7e4fb.js"
+    "static/css/main.7789d2a1.css",
+    "static/js/main.2b62cec7.js"
   ]
 }
