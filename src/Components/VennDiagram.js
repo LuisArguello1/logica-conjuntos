@@ -40,6 +40,8 @@ const VennDiagram = ({ ConjuntoA = [], ConjuntoB = [] , MostrarResultado}) => {
             cy="180"
             r="30%"
             fill="rgba(0, 0, 255, 0.5)"
+            stroke="white"          
+            stroke-width="1"
             onClick={() => handleClick('A')}
             style={{ cursor: 'pointer' }}
           />
@@ -53,6 +55,8 @@ const VennDiagram = ({ ConjuntoA = [], ConjuntoB = [] , MostrarResultado}) => {
             cy="180"
             r="30%"
             fill="rgba(23, 177, 105, 0.5)"
+            stroke="white"          
+            stroke-width="1"
             onClick={() => handleClick('B')}
             style={{ cursor: 'pointer' }}
           />
