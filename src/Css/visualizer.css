@@ -19,6 +19,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
+  flex-wrap: wrap;
   color: rgb(203, 203, 202);
   background-color: #1F2937;
 }
@@ -32,7 +33,7 @@
 .encabezado-visualizer{
   background-color: #374151;
   width: 100%;
-  height: 30px;
+  height: auto;
   text-transform: uppercase;
 }
 .cuerpo-visualizer{

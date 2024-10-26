@@ -1,7 +1,7 @@
 .header-logica-conjuntos {
   width: 100%;
   height: auto;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,6 +28,8 @@
   align-items: center;
   text-align: center;
   gap: 0.5em;
+  text-decoration: none;
+  color:white;
 }
 .nav-logica-conjuntos:hover {
   background-color: #172031;
@@ -70,8 +72,8 @@
   flex-wrap: wrap;
   gap: 2em;
   overflow: hidden;
+  padding-block: 30px;
 }
-
 
 .info-detalle-conjunto {
   width: 28%;
@@ -95,6 +97,7 @@
   align-items: center;
   gap: 1em;
 }
+
 .contenedor-svg {
   width: 15%;
   height: 90%;
@@ -239,7 +242,9 @@
     justify-content: center;
     align-items: center;
     gap: 1em;
+    animation: moveCards 3s ease-in forwards;
   }
+
   .contenedor-svg {
     width: 14%;
     height: 90%;

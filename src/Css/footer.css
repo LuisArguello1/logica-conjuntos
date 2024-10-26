@@ -16,6 +16,17 @@
   align-items: center;
   gap: 2em;
   padding: 30px;
+  animation: moveFooter 2s ease-in forwards;
+
+}
+
+@keyframes moveFooter {
+  0%{
+    transform: translateX(-100%);
+  }
+  100%{
+    transform: translateX(0%);
+  }
 }
 .contenedor-Enlaces {
   width: 100%;

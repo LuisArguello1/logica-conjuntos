@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../Conjuntos3_Css/vennDiagram3.css";
-import cursor from "../Svg/click.svg"
+import cursor from "../Svg/click.svg";
 
 const VennDiagram3 = ({
   ConjuntoA,
@@ -10,23 +10,29 @@ const VennDiagram3 = ({
 }) => {
   const [selected, setSelected] = useState("");
 
-    //   INTERSECCIONES CONJUNTOS A,B,C
-  const interseccionAB = ConjuntoA.filter((e) => ConjuntoB.includes(e))
-  const interseccionAC = ConjuntoA.filter((e) => ConjuntoC.includes(e))
-  const interseccionBC = ConjuntoB.filter((e) => ConjuntoC.includes(e))
-  const interseccionABC = ConjuntoA.filter((e) => ConjuntoB.includes(e) && ConjuntoC.includes(e))
+  //   INTERSECCIONES CONJUNTOS A,B,C
+  const interseccionAB = ConjuntoA.filter((e) => ConjuntoB.includes(e));
+  const interseccionAC = ConjuntoA.filter((e) => ConjuntoC.includes(e));
+  const interseccionBC = ConjuntoB.filter((e) => ConjuntoC.includes(e));
+  const interseccionABC = ConjuntoA.filter(
+    (e) => ConjuntoB.includes(e) && ConjuntoC.includes(e)
+  );
 
-    // VALORES UNICOS PARA LOS CONJUNTOS
-    const conjuntoA = ConjuntoA.filter((e) => !interseccionAB.includes(e) && !interseccionAC.includes(e) )
-    const conjuntoB = ConjuntoB.filter((e) => !interseccionAB.includes(e) && !interseccionBC.includes(e) )
-    const conjuntoC = ConjuntoC.filter((e) => !interseccionAC.includes(e) && !interseccionBC.includes(e) )
- 
-    //Seleccion del conjunto a presentar el contenido
+  // VALORES UNICOS PARA LOS CONJUNTOS
+  const conjuntoA = ConjuntoA.filter(
+    (e) => !interseccionAB.includes(e) && !interseccionAC.includes(e)
+  );
+  const conjuntoB = ConjuntoB.filter(
+    (e) => !interseccionAB.includes(e) && !interseccionBC.includes(e)
+  );
+  const conjuntoC = ConjuntoC.filter(
+    (e) => !interseccionAC.includes(e) && !interseccionBC.includes(e)
+  );
+
+  //Seleccion del conjunto a presentar el contenido
   const handleClick = (conjunto) => {
     setSelected((prev) => (prev === conjunto ? "" : conjunto));
   };
-
-
 
   // Obtener contenido basado en la selección
   const obtenerContenido = () => {
@@ -44,13 +50,21 @@ const VennDiagram3 = ({
           conjuntoB.length > 0 ? conjuntoC.join(", ") : "∅"
         } }`;
       case "InterseccionABC":
-        return `Contenido de Intersección (A ∩ B ∩ C): { ${interseccionABC.length > 0 ? interseccionABC.join(", ") : "∅"} }`;
+        return `Contenido de Intersección (A ∩ B ∩ C): { ${
+          interseccionABC.length > 0 ? interseccionABC.join(", ") : "∅"
+        } }`;
       case "InterseccionAB":
-        return `Contenido de Intersección (A ∩ B): { ${interseccionAB.length > 0 ? interseccionAB.join(", ") : "∅"} }`;
+        return `Contenido de Intersección (A ∩ B): { ${
+          interseccionAB.length > 0 ? interseccionAB.join(", ") : "∅"
+        } }`;
       case "InterseccionAC":
-        return `Contenido de Intersección (A ∩ C): { ${interseccionAC.length > 0 ? interseccionAC.join(", ") : "∅"} }`;
+        return `Contenido de Intersección (A ∩ C): { ${
+          interseccionAC.length > 0 ? interseccionAC.join(", ") : "∅"
+        } }`;
       case "InterseccionBC":
-        return `Contenido de Intersección (B ∩ C): { ${interseccionBC.length > 0 ? interseccionBC.join(", ") : "∅"} }`;
+        return `Contenido de Intersección (B ∩ C): { ${
+          interseccionBC.length > 0 ? interseccionBC.join(", ") : "∅"
+        } }`;
       default:
         return "";
     }
@@ -66,10 +80,10 @@ const VennDiagram3 = ({
             cy="160"
             r="18%"
             fill="rgba(223, 16, 16, 0.5)"
-            stroke="white"          
-            stroke-width="1"
+            stroke="white"
+            strokeWidth="1"
             onClick={() => handleClick("A")}
-            style={{ cursor: "pointer"}}
+            style={{ cursor: "pointer" }}
           />
           <text
             x="500"
@@ -85,8 +99,8 @@ const VennDiagram3 = ({
             cy="330"
             r="18%"
             fill="rgba(0, 0, 255, 0.5)"
-            stroke="white"          
-            stroke-width="1"
+            stroke="white"
+            strokeWidth="1"
             onClick={() => handleClick("B")}
             style={{ cursor: "pointer" }}
           />
@@ -105,8 +119,8 @@ const VennDiagram3 = ({
             cy="330"
             r="18%"
             fill="rgba(23, 177, 105, 0.5)"
-            stroke="white"          
-            stroke-width="1"
+            stroke="white"
+            strokeWidth="1"
             onClick={() => handleClick("C")}
             style={{ cursor: "pointer" }}
           />
