@@ -11,30 +11,34 @@ const VennDiagram3 = ({
   const [selected, setSelected] = useState("");
 
   //   INTERSECCIONES CONJUNTOS A,B,C
-  const interseccionAB = ConjuntoA.filter((e) => ConjuntoB.includes(e));
-  const interseccionAC = ConjuntoA.filter((e) => ConjuntoC.includes(e));
-  const interseccionBC = ConjuntoB.filter((e) => ConjuntoC.includes(e));
   const interseccionABC = ConjuntoA.filter(
     (e) => ConjuntoB.includes(e) && ConjuntoC.includes(e)
   );
 
+  //Se calcula las intersecciones AB. AC, BC
+  const interseccionAB = ConjuntoA.filter((e) => ConjuntoB.includes(e) && !interseccionABC.includes(e));
+  const interseccionAC = ConjuntoA.filter((e) => ConjuntoC.includes(e) && !interseccionABC.includes(e));
+  const interseccionBC = ConjuntoB.filter((e) => ConjuntoC.includes(e) && !interseccionABC.includes(e));
+
   // VALORES UNICOS PARA LOS CONJUNTOS
   const conjuntoA = ConjuntoA.filter(
-    (e) => !interseccionAB.includes(e) && !interseccionAC.includes(e)
+    (e) => !interseccionAB.includes(e) && !interseccionAC.includes(e) && !interseccionABC.includes(e)
   );
   const conjuntoB = ConjuntoB.filter(
-    (e) => !interseccionAB.includes(e) && !interseccionBC.includes(e)
+    (e) => !interseccionAB.includes(e) && !interseccionBC.includes(e) && !interseccionABC.includes(e)
   );
   const conjuntoC = ConjuntoC.filter(
-    (e) => !interseccionAC.includes(e) && !interseccionBC.includes(e)
+    (e) => !interseccionAC.includes(e) && !interseccionBC.includes(e) && !interseccionABC.includes(e)
   );
 
-  //Seleccion del conjunto a presentar el contenido
+  //Se intercambia el contenido del conjunto a cambia 
+  //Si el conjunto seleccionado es el mismo se oculta el contenido
   const handleClick = (conjunto) => {
     setSelected((prev) => (prev === conjunto ? "" : conjunto));
   };
 
   // Obtener contenido basado en la selección
+  // En caso de no haber contenido en los conjuntos se presenta un cojunto vacio ∅
   const obtenerContenido = () => {
     switch (selected) {
       case "A":

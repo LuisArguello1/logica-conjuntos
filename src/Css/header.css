@@ -62,6 +62,10 @@
   width: 100px;
   height: 100px;
 }
+.contenedor-infomation{
+  width: 100%;
+  height: auto;
+}
 .contenedor-info-conjuntos {
   width: 100%;
   height: auto;
@@ -109,6 +113,7 @@
 }
 .titulo-conjunto {
   font-weight: bold;
+  color: white;
 }
 .detalle-conjunto {
   width: 90%;

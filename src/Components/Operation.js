@@ -14,11 +14,14 @@ const Operation = ({
 
   return (
     <>
+      {/* Renderizado condicional si el estado es verdadero se mostrara el contenido del componente */}
       {MostrarResultado && (
         <>
           <strong className="titulo-operacion">
             Seleccione una operacion a realizar
           </strong>
+
+          {/* BTN PARA UNION */}
           <div className="contendor-btn-ayuda">
             <button
               className="btn-operation"
@@ -33,6 +36,7 @@ const Operation = ({
               Union
             </button>
 
+            {/* BTN PARA INTERSECCION */}
             <button
               className="btn-operation"
               onClick={() => onOperation("interseccion")}
@@ -45,6 +49,8 @@ const Operation = ({
               ></img>
               Interseccion
             </button>
+
+            {/* BTN PARA DIFERENCIA A - B */}
             <button
               className="btn-operation"
               onClick={() => onOperation("diferenciaAB")}
@@ -57,6 +63,8 @@ const Operation = ({
               ></img>
               Diferencia A - B
             </button>
+
+            {/* BTN PARA DIFERENCIA B - A */}
             <button
               className="btn-operation"
               onClick={() => onOperation("diferenciaBA")}
@@ -69,6 +77,8 @@ const Operation = ({
               ></img>
               Diferencia B - A
             </button>
+
+            {/* BTN PARA COMPLEMENTO A */}
             <button
               className="btn-operation"
               onClick={() => onOperation("complementoA")}
@@ -81,6 +91,8 @@ const Operation = ({
               ></img>
               Complemento A
             </button>
+
+            {/* BTN PARA COMPLEMENTO B */}
             <button
               className="btn-operation"
               onClick={() => onOperation("complementoB")}
@@ -93,6 +105,8 @@ const Operation = ({
               ></img>
               Complemento B
             </button>
+
+            {/* BTN PARA DIFERENCIA SIMETRICA */}
             <button
               className="btn-operation"
               onClick={() => onOperation("diferenciaAsimetrica")}

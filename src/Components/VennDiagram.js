@@ -5,12 +5,16 @@ import '../Css/diagramaVen.css'
 const VennDiagram = ({ ConjuntoA = [], ConjuntoB = [] , MostrarResultado}) => {
   const [selected, setSelected] = useState('')
 
+  //se calcula la interseccion de los conjuntos
   const interseccion = ConjuntoA.filter((el) => ConjuntoB.includes(el))
 
+  //Se intercambia el contenido del conjunto a cambia 
+  //Si el conjunto seleccionado es el mismo se oculta el contenido
   const handleClick = (conjunto) => {
     setSelected((prev) => (prev === conjunto ? '' : conjunto))
   };
 
+  //se calcula el contenido del conjunto a y b sin la interseccion
   const conjuntoA = ConjuntoA.filter((el) => !interseccion.includes(el))
   const conjuntoB = ConjuntoB.filter((el) => !interseccion.includes(el))
 

@@ -1,6 +1,7 @@
 import React from "react";
 import info from "../Svg/informacion.svg";
 import salir from "../Svg/salir.svg";
+import "../Conjuntos3_Css/operation3Conjuntos.css"
 
 const Operation3Conjuntos = ({
   MostrarAyuda,
@@ -30,9 +31,10 @@ const Operation3Conjuntos = ({
       "diferenciaBCA",
       "diferenciaCAB",
       "diferenciaCBA",
-      "diferenciaSimetrica",
+      "diferenciaSimentrica",
     ];
 
+    // Se renderiza todos los botones con el arreglo anterior y se retorna toda una etiqueta
     return operaciones.map((operacion) => (
       <button className="btn-operation" onClick={() => onOperation(operacion)} key={operacion}>
         <img
@@ -48,6 +50,7 @@ const Operation3Conjuntos = ({
 
   return (
     <>
+      {/* Renderizado condicional si el estado es verdadero se mostrara el contenido del componente */}
       {MostrarResultado && (
         <>
           <strong className="titulo-operacion">
