@@ -8,6 +8,7 @@ import VennDiagram from "./Components/VennDiagram";
 import Footer from "./Components/Footer";
 import AppConjuntos3 from "./AppConjuntos3";
 import Comentarios from "./Comentarios";
+import VideosConjuntos from "./VideosConjuntos";
 import { useState } from "react";
 import {HashRouter, Navigate, Route, Routes} from "react-router-dom";
 
@@ -316,6 +317,7 @@ function App() {
           {/* Rutas paginas */}
           <Route path="/AppConjuntos3" element={<AppConjuntos3></AppConjuntos3>}></Route>
           <Route path="/ComentariosUsers" element={<Comentarios></Comentarios>}></Route>
+          <Route path="/VideosAyuda" element={<VideosConjuntos></VideosConjuntos>}></Route>
           <Route path="*" element={<Navigate to="/"></Navigate>}></Route>
         </Routes>
       </HashRouter>

@@ -22,7 +22,7 @@ const Header = () => {
       </div>
       {/* Se usa Link para hacer la navegacion entre paginas */}
       <div className="options-logica-conjuntos">
-        <div className="nav-logica-conjuntos">Nav Opcion 1</div>
+        <Link to="/VideosAyuda" className="nav-logica-conjuntos">Contenido de ayuda</Link>
         <Link to="/AppConjuntos3" className="nav-logica-conjuntos">
           3 Conjuntos
         </Link>
