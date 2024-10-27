@@ -1,9 +1,13 @@
 {
   "files": {
-    "main.css": "/logica-conjuntos/static/css/main.dc210a8d.css",
-    "main.js": "/logica-conjuntos/static/js/main.9d069493.js",
+    "main.css": "/logica-conjuntos/static/css/main.1ca884eb.css",
+    "main.js": "/logica-conjuntos/static/js/main.9e533a06.js",
     "static/js/453.e34c3016.chunk.js": "/logica-conjuntos/static/js/453.e34c3016.chunk.js",
+    "static/media/UnionConjuntos-ejemplo.jpg": "/logica-conjuntos/static/media/UnionConjuntos-ejemplo.c17d55df6f5efacd444d.jpg",
     "static/media/conjuntoImg.png": "/logica-conjuntos/static/media/conjuntoImg.7c08871513875b3f2c02.png",
+    "static/media/EjemploDiferenciaConjuntos.jpg": "/logica-conjuntos/static/media/EjemploDiferenciaConjuntos.a90a129c1a4836f5bb9d.jpg",
+    "static/media/EjemploConjunto.jpg": "/logica-conjuntos/static/media/EjemploConjunto.2f130b92d5bedf2c39b9.jpg",
+    "static/media/EjemploInterseccion.jpg": "/logica-conjuntos/static/media/EjemploInterseccion.d3d9e2cf373e4214eff3.jpg",
     "static/media/Universidad-logo.png": "/logica-conjuntos/static/media/Universidad-logo.847da5af23d469dd1919.png",
     "static/media/instagram.svg": "/logica-conjuntos/static/media/instagram.dc39bac0b9005219396cb633b70b82cc.svg",
     "static/media/whatsapp.svg": "/logica-conjuntos/static/media/whatsapp.97c38b50f32f977d84cde9e870d0abfe.svg",
@@ -23,12 +27,12 @@
     "static/media/creador.svg": "/logica-conjuntos/static/media/creador.ec6184433eeeac44ec4cd1606e7a5d45.svg",
     "static/media/twiter.svg": "/logica-conjuntos/static/media/twiter.f7b8d9abe12257f15ce9b69fc149cbfa.svg",
     "static/media/union.svg": "/logica-conjuntos/static/media/union.65ade5fc005646eca8d908b49f6da672.svg",
-    "main.dc210a8d.css.map": "/logica-conjuntos/static/css/main.dc210a8d.css.map",
-    "main.9d069493.js.map": "/logica-conjuntos/static/js/main.9d069493.js.map",
+    "main.1ca884eb.css.map": "/logica-conjuntos/static/css/main.1ca884eb.css.map",
+    "main.9e533a06.js.map": "/logica-conjuntos/static/js/main.9e533a06.js.map",
     "453.e34c3016.chunk.js.map": "/logica-conjuntos/static/js/453.e34c3016.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dc210a8d.css",
-    "static/js/main.9d069493.js"
+    "static/css/main.1ca884eb.css",
+    "static/js/main.9e533a06.js"
   ]
 }
