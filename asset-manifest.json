@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/logica-conjuntos/static/css/main.1ca884eb.css",
-    "main.js": "/logica-conjuntos/static/js/main.9e533a06.js",
+    "main.css": "/logica-conjuntos/static/css/main.c1752cc5.css",
+    "main.js": "/logica-conjuntos/static/js/main.bc1fdcac.js",
     "static/js/453.e34c3016.chunk.js": "/logica-conjuntos/static/js/453.e34c3016.chunk.js",
     "static/media/UnionConjuntos-ejemplo.jpg": "/logica-conjuntos/static/media/UnionConjuntos-ejemplo.c17d55df6f5efacd444d.jpg",
     "static/media/conjuntoImg.png": "/logica-conjuntos/static/media/conjuntoImg.7c08871513875b3f2c02.png",
@@ -27,12 +27,12 @@
     "static/media/creador.svg": "/logica-conjuntos/static/media/creador.ec6184433eeeac44ec4cd1606e7a5d45.svg",
     "static/media/twiter.svg": "/logica-conjuntos/static/media/twiter.f7b8d9abe12257f15ce9b69fc149cbfa.svg",
     "static/media/union.svg": "/logica-conjuntos/static/media/union.65ade5fc005646eca8d908b49f6da672.svg",
-    "main.1ca884eb.css.map": "/logica-conjuntos/static/css/main.1ca884eb.css.map",
-    "main.9e533a06.js.map": "/logica-conjuntos/static/js/main.9e533a06.js.map",
+    "main.c1752cc5.css.map": "/logica-conjuntos/static/css/main.c1752cc5.css.map",
+    "main.bc1fdcac.js.map": "/logica-conjuntos/static/js/main.bc1fdcac.js.map",
     "453.e34c3016.chunk.js.map": "/logica-conjuntos/static/js/453.e34c3016.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ca884eb.css",
-    "static/js/main.9e533a06.js"
+    "static/css/main.c1752cc5.css",
+    "static/js/main.bc1fdcac.js"
   ]
 }
