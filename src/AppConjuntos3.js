@@ -8,7 +8,8 @@ import Operation3 from "./Conjuntos3_Components/Operation3Conjuntos";
 import Visualizer3Conjuntos from "./Conjuntos3_Components/Visualizer3Conjuntos";
 import Footer from "./Components/Footer";
 
-const AppConjuntos3 = () => {
+const AppConjuntos3 = ({mostrarAlerta}) => {
+  const [Universo, setUniverso] = useState([]);
   const [ConjuntoA, setConjuntoA] = useState([]);
   const [ConjuntoB, setConjuntoB] = useState([]);
   const [ConjuntoC, setConjuntoC] = useState([]);
@@ -47,7 +48,7 @@ const AppConjuntos3 = () => {
         return (
           <div className="pre-text">
               <p><strong>Unión Explicación:</strong></p> <br></br>
-              <p>Tenemos los conjuntos A y B:</p>
+              <p>Tenemos los conjuntos A, B y C:</p>
               <p><strong>A:</strong>{` { ${ConjuntoA} }`}</p>
               <p><strong>B:</strong>{` { ${ConjuntoB} }`}</p>
               <p><strong>C:</strong>{` { ${ConjuntoC} }`}</p> <br></br>
@@ -152,15 +153,15 @@ const AppConjuntos3 = () => {
       case "complementoA":
         return (
           <div className="pre-text">
-            <p><strong>Complemento de A respecto a B y C explicación:</strong></p> <br></br>
+            <p><strong>Complemento de A respecto al universo:</strong></p> <br></br>
             
-            <p>Consideramos los conjuntos A, B y C:</p>
-            <p><strong>A:</strong>{` { ${ConjuntoA} }`}</p>
-            <p><strong>B:</strong>{` { ${ConjuntoB} }`}</p>
-            <p><strong>C:</strong>{` { ${ConjuntoC} }`}</p> <br></br>
+            <p>Consideramos el universo y el conjunto A:</p>
+
+            <p><strong>Universo:</strong>{` { ${Universo} }`}</p>
+            <p><strong>A:</strong>{` { ${ConjuntoA} }`}</p><br></br>
             
-            <p>El <strong>complemento de A</strong> respecto a B y C contiene los elementos que están en B y C pero <strong>no están en A</strong>.</p>
-            <p>Esto significa que se buscan todos los elementos que pertenecen a B y C y se excluyen aquellos que también pertenecen a A.</p>
+            <p>El <strong>complemento de A</strong> respecto al universo contiene los elementos que están en el universo pero <strong>no están en A</strong>.</p>
+            <p>Esto significa que se buscan todos los elementos que pertenecen al universo y se excluyen lo elemento que pertenecen a A.</p>
             
             <p><strong>C:</strong>{` { ${ComplementoA.length > 0 ? ComplementoA : "∅"} }`}</p> <br></br>
             
@@ -170,15 +171,15 @@ const AppConjuntos3 = () => {
       case "complementoB":
         return (
           <div className="pre-text">
-            <p><strong>Complemento de B respecto a A y C explicación:</strong></p> <br></br>
+            <p><strong>Complemento de B respecto al universo:</strong></p> <br></br>
             
-            <p>Consideramos los conjuntos A, B y C:</p>
-            <p><strong>A:</strong>{` { ${ConjuntoA} }`}</p>
-            <p><strong>B:</strong>{` { ${ConjuntoB} }`}</p>
-            <p><strong>C:</strong>{` { ${ConjuntoC} }`}</p> <br></br>
+            <p>Consideramos el universo y el conjunto B:</p>
+
+            <p><strong>Universo:</strong>{` { ${Universo} }`}</p>
+            <p><strong>A:</strong>{` { ${ConjuntoB} }`}</p><br></br>
             
-            <p>El <strong>complemento de B</strong> respecto a A y C contiene los elementos que están en A y C pero <strong>no están en B</strong>.</p>
-            <p>Esto implica que se buscan todos los elementos que pertenecen a A y C y se excluyen aquellos que también pertenecen a B.</p>
+            <p>El <strong>complemento de B</strong> respecto al universo contiene los elementos que están en el universo pero <strong>no están en B</strong>.</p>
+            <p>Esto significa que se buscan todos los elementos que pertenecen al universo y se excluyen lo elemento que pertenecen a B.</p>
             
             <p><strong>C:</strong>{` { ${ComplementoB.length > 0 ? ComplementoB : "∅"} }`}</p> <br></br>
             
@@ -188,15 +189,15 @@ const AppConjuntos3 = () => {
       case "complementoC":
         return (
           <div className="pre-text">
-            <p><strong>Complemento de C respecto a A y B explicación:</strong></p> <br></br>
+            <p><strong>Complemento de C respecto al universo:</strong></p> <br></br>
             
-            <p>Consideramos los conjuntos A, B y C:</p>
-            <p><strong>A:</strong>{` { ${ConjuntoA} }`}</p>
-            <p><strong>B:</strong>{` { ${ConjuntoB} }`}</p>
-            <p><strong>C:</strong>{` { ${ConjuntoC} }`}</p> <br></br>
+            <p>Consideramos el universo y el conjunto C:</p>
+
+            <p><strong>Universo:</strong>{` { ${Universo} }`}</p>
+            <p><strong>C:</strong>{` { ${ConjuntoC} }`}</p><br></br>
             
-            <p>El <strong>complemento de C</strong> respecto a A y B contiene los elementos que están en A y B pero <strong>no están en C</strong>.</p>
-            <p>Esto significa que se buscan todos los elementos que pertenecen a A y B y se excluyen aquellos que también pertenecen a C.</p>
+            <p>El <strong>complemento de C</strong> respecto al universo contiene los elementos que están en el universo pero <strong>no están en C</strong>.</p>
+            <p>Esto significa que se buscan todos los elementos que pertenecen al universo y se excluyen lo elemento que pertenecen a C.</p>
             
             <p><strong>C:</strong>{` { ${ComplementoC.length > 0 ? ComplementoC : "∅"} }`}</p> <br></br>
             
@@ -290,8 +291,8 @@ const AppConjuntos3 = () => {
       case "diferenciaSimentrica":
         return (
           <div className="pre-text">
-              <p><strong>Diferencia Simétrica Explicación:</strong></p> <br></br>
-              <p>Tenemos los conjuntos A y B:</p>
+              <p><strong>Diferencia Simétrica A △ B △ C Explicación:</strong></p> <br></br>
+              <p>Tenemos los conjuntos A, B y C:</p>
               <p><strong>A:</strong>{` { ${ConjuntoA} }`}</p>
               <p><strong>B:</strong>{` { ${ConjuntoB} }`}</p>
               <p><strong>C:</strong>{` { ${ConjuntoC} }`}</p> <br></br>
@@ -423,20 +424,17 @@ const AppConjuntos3 = () => {
         break;
       case "complementoA":
         //calculamos complemento A
-        const universoA = Array.from(new Set([...ConjuntoA, ...ConjuntoB, ...ConjuntoC]))
-        complementoA = universoA.filter((e) => !ConjuntoA.includes(e))
+        complementoA = Universo.filter((e) => !ConjuntoA.includes(e))
         setComplementoA(complementoA);
         break;
       case "complementoB":
         //calculamos complemento B
-        const universoB = Array.from(new Set([...ConjuntoA, ...ConjuntoB, ...ConjuntoC]))
-        complementoB = universoB.filter((e) => !ConjuntoB.includes(e))
+        complementoB = Universo.filter((e) => !ConjuntoB.includes(e))
         setComplementoB(complementoB);
         break;
       case "complementoC":
         //calculamos complemento C
-        const universoC = Array.from(new Set([...ConjuntoA, ...ConjuntoB, ...ConjuntoC]))
-        complementoC = universoC.filter((e) => !ConjuntoC.includes(e))
+        complementoC = Universo.filter((e) => !ConjuntoC.includes(e))
         setComplementoC(complementoC);
         break;
       case "diferenciaAB":
@@ -534,6 +532,9 @@ const AppConjuntos3 = () => {
       <Header></Header>
       <Information></Information>
       <Set3Conjuntos
+        mostrarAlerta={mostrarAlerta}
+        Universo={Universo}
+        setUniverso={setUniverso}
         ConjuntoA={ConjuntoA}
         setConjuntoA={setConjuntoA}
         ConjuntoB={ConjuntoB}
@@ -544,6 +545,7 @@ const AppConjuntos3 = () => {
         setMostrarResultados={setMostrarResultados}
       ></Set3Conjuntos>
       <VennDiagram3
+        Universo={Universo}
         ConjuntoA={ConjuntoA}
         ConjuntoB={ConjuntoB}
         ConjuntoC={ConjuntoC}

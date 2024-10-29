@@ -117,7 +117,7 @@ const Operation = ({
                 className="svg-info"
                 onClick={() => handleHelp("diferenciaAsimetrica")}
               ></img>
-              Diferencia Simetrica
+              Diferencia Simetrica    A △ B
             </button>
 
             {/* Pantalla emergente de ayuda */}

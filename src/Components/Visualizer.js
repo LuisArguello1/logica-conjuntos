@@ -54,7 +54,7 @@ const Visualizer = ({
           </div>
 
           <div className="resp">
-            <strong className="encabezado-visualizer">Diferencia A. </strong>
+            <strong className="encabezado-visualizer">Diferencia S. </strong>
             <div className="cuerpo-visualizer">{renderArray(DiferenciaAsimetrica)}</div>
           </div>
           

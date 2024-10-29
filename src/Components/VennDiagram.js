@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import cursor from "../Svg/click.svg"
 import '../Css/diagramaVen.css'
 
-const VennDiagram = ({ ConjuntoA = [], ConjuntoB = [] , MostrarResultado}) => {
+const VennDiagram = ({Universo = [], ConjuntoA = [], ConjuntoB = [] , MostrarResultado}) => {
   const [selected, setSelected] = useState('')
 
   //se calcula la interseccion de los conjuntos
@@ -17,10 +17,16 @@ const VennDiagram = ({ ConjuntoA = [], ConjuntoB = [] , MostrarResultado}) => {
   //se calcula el contenido del conjunto a y b sin la interseccion
   const conjuntoA = ConjuntoA.filter((el) => !interseccion.includes(el))
   const conjuntoB = ConjuntoB.filter((el) => !interseccion.includes(el))
+  const union = Array.from(new Set([...ConjuntoA, ...ConjuntoB]))
+
+
+  const ElementosNoPertenecen = Universo.filter((e) => !union.includes(e))
 
   // Obtener contenido basado en la selección
   const obtenerContenido = () => {
     switch (selected) {
+      case 'E':
+        return `Contenido de Elementos que no pertenecen: { ${ElementosNoPertenecen.length > 0 ? ElementosNoPertenecen.join(', '): "∅"} }`
       case 'A':
         return `Contenido de Conjunto A: { ${conjuntoA.length > 0 ? conjuntoA.join(', '): "∅"} }`
       case 'B':
@@ -38,6 +44,18 @@ const VennDiagram = ({ ConjuntoA = [], ConjuntoB = [] , MostrarResultado}) => {
       <div className="contenedor-diagrama">
         <h2 style={{color: "white"}}>Diagrama de Edwards-Venn</h2>
         <svg width="50%" height="60%" className='svg-diagrama'>
+          {/* Círculo Universo*/}
+          <circle
+            cx="50"
+            cy="40"
+            r="7%"
+            fill="rgba(0, 0, 0, 0)"
+            onClick={() => handleClick('E')}
+            style={{ cursor: 'pointer' }}
+          />
+          <text x="30" y="40" className="texto-conjunto" onClick={() => handleClick('E')}>
+            ∉
+          </text>
           {/* Círculo A */}
           <circle
             cx="220"
@@ -45,7 +63,7 @@ const VennDiagram = ({ ConjuntoA = [], ConjuntoB = [] , MostrarResultado}) => {
             r="30%"
             fill="rgba(0, 0, 255, 0.5)"
             stroke="white"          
-            stroke-width="1"
+            strokeWidth="1"
             onClick={() => handleClick('A')}
             style={{ cursor: 'pointer' }}
           />
@@ -60,7 +78,7 @@ const VennDiagram = ({ ConjuntoA = [], ConjuntoB = [] , MostrarResultado}) => {
             r="30%"
             fill="rgba(23, 177, 105, 0.5)"
             stroke="white"          
-            stroke-width="1"
+            strokeWidth="1"
             onClick={() => handleClick('B')}
             style={{ cursor: 'pointer' }}
           />

@@ -3,6 +3,7 @@ import "../Conjuntos3_Css/vennDiagram3.css";
 import cursor from "../Svg/click.svg";
 
 const VennDiagram3 = ({
+  Universo,
   ConjuntoA,
   ConjuntoB,
   ConjuntoC,
@@ -20,6 +21,9 @@ const VennDiagram3 = ({
   const interseccionAC = ConjuntoA.filter((e) => ConjuntoC.includes(e) && !interseccionABC.includes(e));
   const interseccionBC = ConjuntoB.filter((e) => ConjuntoC.includes(e) && !interseccionABC.includes(e));
 
+  const union = Array.from(new Set([...ConjuntoA, ...ConjuntoB, ...ConjuntoC]))
+  const elementosNoPertenecen = Universo.filter((e) => !union.includes(e))  
+  
   // VALORES UNICOS PARA LOS CONJUNTOS
   const conjuntoA = ConjuntoA.filter(
     (e) => !interseccionAB.includes(e) && !interseccionAC.includes(e) && !interseccionABC.includes(e)
@@ -41,6 +45,10 @@ const VennDiagram3 = ({
   // En caso de no haber contenido en los conjuntos se presenta un cojunto vacio ∅
   const obtenerContenido = () => {
     switch (selected) {
+      case "E":
+        return `Elementos que no pertenecen: { ${
+          elementosNoPertenecen.length > 0 ? elementosNoPertenecen.join(", ") : "∅"
+        } }`;
       case "A":
         return `Contenido de Conjunto A: { ${
           conjuntoA.length > 0 ? conjuntoA.join(", ") : "∅"
@@ -78,6 +86,23 @@ const VennDiagram3 = ({
       <div className="contenedor-diagrama">
         <h2 style={{ color: "white" }}>Diagrama de Edwards-Venn</h2>
         <svg width="80%" height="85%" className="svg-diagrama">
+          {/* No pertenecen*/}
+          <circle
+            cx="50"
+            cy="50"
+            r="7%"
+            fill="rgba(0, 0, 0, 0)"
+            onClick={() => handleClick("E")}
+            style={{ cursor: "pointer" }}
+          />
+          <text
+            x="50"
+            y="50"
+            className="texto-conjunto"
+            onClick={() => handleClick("E")}
+          >
+            ∉
+          </text>
           {/* Círculo A */}
           <circle
             cx="500"

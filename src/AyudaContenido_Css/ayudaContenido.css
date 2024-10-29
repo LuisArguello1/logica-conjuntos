@@ -14,6 +14,36 @@
     /* border: 1px solid white; */
     background-color: #1F2937;
 }
+.contenedor-explicacion-Conjunto2{
+    width: 90%;
+    height: auto;
+    /* border: 1px solid white; */
+    background-color: #1F2937;
+    animation: movePage 1s ease-in forwards;
+}
+@keyframes movePage {
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+.contenedor-explicacion-Conjunto3{
+    width: 90%;
+    height: auto;
+    /* border: 1px solid white; */
+    background-color: #1F2937;
+    animation: movePage2 1s ease-in forwards;
+}
+@keyframes movePage2 {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
 .title-explicacion{
     width: 100%;
     height: auto;
@@ -35,6 +65,14 @@
 }
 .contenedor-explicacion{
     width: 70%;
+    height: auto;
+    /* border: 1px solid white; */
+    color: #97acb7;
+    text-align: justify;
+    padding: 15px;
+}
+.contenedor-explicacion2{
+    width: 100%;
     height: auto;
     /* border: 1px solid white; */
     color: #97acb7;
@@ -64,8 +102,37 @@
     background-color:  #1F2937;
     font-size: 15px;
 }
-
+.pregunta-subtitle-contenidoAyuda{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #374151;
+    cursor: pointer;
+}
+.pregunta-subtitle-contenidoAyuda:hover{
+    color: red;
+    text-decoration: underline;
+}
 @media(max-width: 500px){
+    .contenedor-contenido-ayuda{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        gap: 2em;
+    }
+    .contenedor-explicacion-Conjunto{
+        width: 100%;
+        height: auto;
+        /* border: 1px solid white; */
+        background-color: #1F2937;
+    }
     .contenedor-explicacion-img{
         width: 100%;
         height: auto;
@@ -83,7 +150,7 @@
         padding: 15px;
     }
     .contenedor-img-explicacion{
-        width: 70%;
+        width: 90%;
         height: auto;
         /* border: 1px solid white; */
         padding: 20px;

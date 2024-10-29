@@ -3,6 +3,9 @@ import Swal from "sweetalert2";
 import "../Conjuntos3_Css/setOperation3Conjuntos.css";
 
 const Set3Conjuntos = ({
+  mostrarAlerta,
+  Universo,
+  setUniverso,
   ConjuntoA,
   setConjuntoA,
   ConjuntoB,
@@ -12,6 +15,7 @@ const Set3Conjuntos = ({
   MostrarResultado,
   setMostrarResultados,
 }) => {
+  const [Univers, setUnivers] = useState("")
   const [Elementos1, setElementos1] = useState("");
   const [Elementos2, setElementos2] = useState("");
   const [Elementos3, setElementos3] = useState("");
@@ -21,6 +25,17 @@ const Set3Conjuntos = ({
     const regex = /^\d+(,\d+)*$/;
     return regex.test(conjunto);
   };
+
+  const validarUniverso = (conjunto1, conjunto2, conjunto3) => {
+    const nuevoUniverso = Univers.split(",").map((e) => e.trim())
+
+    const validarConjunto1 = conjunto1.every((e) => nuevoUniverso.includes(e))
+    const validarConjunto2 = conjunto2.every((e) => nuevoUniverso.includes(e))
+    const validarConjunto3 = conjunto3.every((e) => nuevoUniverso.includes(e))
+
+    return validarConjunto1 && validarConjunto2 && validarConjunto3
+  }
+
 
   const handleConjuntoA_ConjuntoB_ConjuntoC = () => {
     //se confirma la validacion de los conjuntos
@@ -35,36 +50,39 @@ const Set3Conjuntos = ({
       const nuevosElementosB = Elementos2.split(",").map((e) => e.trim());
       const nuevosElementosC = Elementos3.split(",").map((e) => e.trim());
 
-      //Utilizamos Set para que no aya elementos repetidos y si se agrega un nuevo elemento
-      //se lo agrega a la ultima posicion del array
-      setConjuntoA((prev) =>
-        Array.from(new Set([...prev, ...nuevosElementosA]))
-      );
-      setConjuntoB((prev) =>
-        Array.from(new Set([...prev, ...nuevosElementosB]))
-      );
-      setConjuntoC((prev) =>
-        Array.from(new Set([...prev, ...nuevosElementosC]))
-      );
+      if(validarUniverso(nuevosElementosA,nuevosElementosB,nuevosElementosC)){
 
-      //se muestran los resultados cambiando el estado a true
-      setMostrarResultados(true);
-
-      //se reinician los inputs 
-      setElementos1("");
-      setElementos2("");
-      setElementos3("");
+        const nuevoUniverso = Univers.split(",").map((e) => e.trim())
+        //Utilizamos Set para que no aya elementos repetidos y si se agrega un nuevo elemento
+        //se lo agrega a la ultima posicion del array
+        setUniverso((prev) => Array.from(new Set([...prev, ...nuevoUniverso])))
+        setConjuntoA((prev) =>
+          Array.from(new Set([...prev, ...nuevosElementosA]))
+        );
+        setConjuntoB((prev) =>
+          Array.from(new Set([...prev, ...nuevosElementosB]))
+        );
+        setConjuntoC((prev) =>
+          Array.from(new Set([...prev, ...nuevosElementosC]))
+        );
+  
+        //se muestran los resultados cambiando el estado a true
+        setMostrarResultados(true);
+  
+        //se reinician los inputs 
+        setUnivers("");
+        setElementos1("");
+        setElementos2("");
+        setElementos3("");
+      }else{
+        mostrarAlerta("error", "Error, los datos de los conjuntos no coinciden con el universo")
+      }
     } else {
 
       //En caso de no haber contenido en los inputs se da este mensaje
       //O en caso que no se cumpla el patron
-      Swal.fire({
-        position: "center",
-        icon: "error",
-        title: "Error, ingresa solo datos separados por comas (ej. 1,2,3)",
-        showConfirmButton: false,
-        timer: 4000,
-      });
+      
+      mostrarAlerta("error", "Error en los Conjuntos A o B o C, verifique el contenido")
     }
   };
 
@@ -85,6 +103,17 @@ const Set3Conjuntos = ({
       <div className="contenedor-entradas-buttons">
         <div className="contenedor-entradas-conjunto">
           <div className="entradas-conjunto">
+            <div className="inputBox">
+              {/* input Universo*/}
+              <input
+                placeholder="Ej: 1,2,3,4,5"
+                type="text"
+                required=""
+                value={Univers}
+                onChange={(e) => setUnivers(e.target.value)}
+              ></input>
+              <span>Universo:</span>
+            </div>
             <div className="inputBox">
               {/* input Conjunto A */}
               <input
@@ -136,19 +165,24 @@ const Set3Conjuntos = ({
       {/* Renderizado condicional, se mostrara solosi el estado el verdadero o se halla dado click en el btn de ingresar datos */}
       {MostrarResultado && (
         <div className="contenedor-Json">
+          {/* Renderizado Universo*/}
+          <div className="conjunto">
+            <strong className="titulo-datos">Universo: </strong>
+            <div className="resultado">{renderConjutos(Universo)}</div>
+          </div>
           {/* Renderizado conjunto A */}
           <div className="conjunto">
-            <strong className="titulo-datos">Contenido conjunto A: </strong>
+            <strong className="titulo-datos">Conjunto A: </strong>
             <div className="resultado">{renderConjutos(ConjuntoA)}</div>
           </div>
           {/* Renderizado conjunto B */}
           <div className="conjunto">
-            <strong className="titulo-datos">Contenido conjunto B: </strong>
+            <strong className="titulo-datos">Conjunto B: </strong>
             <div className="resultado">{renderConjutos(ConjuntoB)}</div>
           </div>
           {/* Renderizado conjunto C */}
           <div className="conjunto">
-            <strong className="titulo-datos">Contenido conjunto C: </strong>
+            <strong className="titulo-datos">Conjunto C: </strong>
             <div className="resultado">{renderConjutos(ConjuntoC)}</div>
           </div>
         </div>

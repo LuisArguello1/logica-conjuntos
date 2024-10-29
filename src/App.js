@@ -11,9 +11,11 @@ import Comentarios from "./Comentarios";
 import VideosConjuntos from "./VideosConjuntos";
 import { useState } from "react";
 import {HashRouter, Navigate, Route, Routes} from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 function App() {
+  const [Universo, setUniverso] = useState([]);
   const [ConjuntoA, setConjuntoA] = useState([]);
   const [ConjuntoB, setConjuntoB] = useState([]);
   const [Union, setUnion] = useState([]);
@@ -26,8 +28,18 @@ function App() {
   const [MostrarResultado, setMostrarResultados] = useState(false);
   const [MostrarOpciones, setMostrarOpciones] = useState(false);
   const [MostrarAyuda, setMostrarAyuda] = useState(false);
-  const [Select, setSelected] = useState("")
+  const [Select, setSelected] = useState("");
 
+  
+  const mostrarAlerta = (icono, descripcion) => {
+    Swal.fire({
+      position: "center",
+      icon: icono,
+      title: descripcion,
+      showConfirmButton: false,
+      timer: 4000,
+    });
+  };
 
   const handleClickOperation = (operacion) => {
     setSelected(operacion)
@@ -81,7 +93,7 @@ function App() {
 
         <p><strong>C:</strong>{` { ${Union.length > 0 ? Union : "∅"} }`}</p> <br></br>
       
-        <p>Espero te alla servido esta explicacion 🧐.</p>
+        <p>Espero te haya servido esta explicacion 🧐.</p>
         </div>)
       // Explicacion de interseccion
       case "interseccion":
@@ -145,17 +157,18 @@ function App() {
         return (
           <div className="pre-text">
             <p><strong>Complemento de A explicación:</strong></p> <br></br>
-        
-            <p>Tenemos los conjuntos A y B:</p>
+            
+            <p>Tenemos el universo y los conjuntos A y B:</p>
+            <p><strong>Universo:</strong>{` { ${Universo} }`}</p>
             <p><strong>A:</strong>{` { ${ConjuntoA} }`}</p>
             <p><strong>B:</strong>{` { ${ConjuntoB} }`}</p> <br></br>
-        
-            <p>El <strong>complemento de A</strong> contiene los elementos de B que 
+            
+            <p>El <strong>complemento de A</strong> contiene los elementos del <strong>universo</strong> que 
               <strong> no están en A</strong>.</p>
-            <p>En este caso, los elementos que están en B pero no en A son:</p>
-        
+            <p>En este caso, los elementos en el universo que no están en A son:</p>
+            
             <p><strong>C:</strong>{` { ${ComplementoA.length > 0 ? ComplementoA : "∅"} }`}</p> <br></br>
-        
+            
             <p>Espero que esta explicación haya sido clara 🧐.</p>
           </div>
         );
@@ -164,17 +177,18 @@ function App() {
         return (
           <div className="pre-text">
             <p><strong>Complemento de B explicación:</strong></p> <br></br>
-        
-            <p>Tenemos los conjuntos A y B:</p>
+      
+            <p>Tenemos el universo y los conjuntos A y B:</p>
+            <p><strong>Universo:</strong>{` { ${Universo} }`}</p>
             <p><strong>A:</strong>{` { ${ConjuntoA} }`}</p>
             <p><strong>B:</strong>{` { ${ConjuntoB} }`}</p> <br></br>
-        
-            <p>El <strong>complemento de B</strong> contiene los elementos de A que 
+      
+            <p>El <strong>complemento de B</strong> contiene los elementos del <strong>universo</strong> que 
               <strong> no están en B</strong>.</p>
-            <p>En este caso, los elementos que están en A pero no en B son:</p>
-        
+            <p>En este caso, los elementos en el universo que no están en B son:</p>
+      
             <p><strong>C:</strong>{` { ${ComplementoB.length > 0 ? ComplementoB : "∅"} }`}</p> <br></br>
-        
+      
             <p>Espero que esta explicación te haya servido 🧐.</p>
           </div>
         );
@@ -239,13 +253,13 @@ function App() {
         break;
 
       case "complementoA":
-        newResult5 = ConjuntoB.filter((valor) => !ConjuntoA.includes(valor));
+        newResult5 = Universo.filter((e) => !ConjuntoA.includes(e));
         setComplementoA(newResult5);
 
         break;
 
       case "complementoB":
-        newResult6 = ConjuntoA.filter((valor) => !ConjuntoB.includes(valor));
+        newResult6 = Universo.filter((e) => !ConjuntoB.includes(e));
         setComplementoB(newResult6);
 
         break;
@@ -278,14 +292,18 @@ function App() {
                 <Header></Header>
                 <Information></Information>
                 <SetOperation
+                  mostrarAlerta={mostrarAlerta}
+                  setUniverso={setUniverso}
                   setConjuntoA={setConjuntoA}
                   setConjuntoB={setConjuntoB}
+                  Universo={Universo}
                   ConjuntoA={ConjuntoA}
                   ConjuntoB={ConjuntoB}
                   MostrarResultado={MostrarResultado}
                   setMostrarResultados={setMostrarResultados}
                 ></SetOperation>
                 <VennDiagram
+                  Universo={Universo}
                   ConjuntoA={ConjuntoA}
                   ConjuntoB={ConjuntoB}
                   MostrarResultado={MostrarResultado}
@@ -315,7 +333,7 @@ function App() {
           ></Route>
 
           {/* Rutas paginas */}
-          <Route path="/AppConjuntos3" element={<AppConjuntos3></AppConjuntos3>}></Route>
+          <Route path="/AppConjuntos3" element={<AppConjuntos3 mostrarAlerta={mostrarAlerta} ></AppConjuntos3>}></Route>
           <Route path="/ComentariosUsers" element={<Comentarios></Comentarios>}></Route>
           <Route path="/VideosAyuda" element={<VideosConjuntos></VideosConjuntos>}></Route>
           <Route path="*" element={<Navigate to="/"></Navigate>}></Route>

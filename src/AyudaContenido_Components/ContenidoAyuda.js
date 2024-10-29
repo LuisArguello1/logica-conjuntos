@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useState} from "react";
 import "../AyudaContenido_Css/ayudaContenido.css";
 import imgConjunto from "../Img/EjemploConjunto.jpg";
 import imgUnion from "../Img/UnionConjuntos-ejemplo.jpg";
@@ -10,6 +10,11 @@ import logo from "../Img/conjuntoImg.png"
 
 
 const ContenidoAyuda = () => {
+  const [MostrarContenido, setMostrarContenido] = useState(false)
+
+  const mostrarContenido = () => {
+    setMostrarContenido(!MostrarContenido)
+  }
   return (
     <div className="contenedor-contenido-ayuda">
       <div className="contenedor-explicacion-Conjunto">
@@ -173,6 +178,84 @@ const ContenidoAyuda = () => {
           </div>
         </div>
       </div>
+
+      <div className="pregunta-subtitle-contenidoAyuda" onClick={mostrarContenido}>¿Por que es importante la logica de conjuntos?</div>
+
+      {MostrarContenido && (
+        <>
+          {/* // CONTENIDO IMPORTANTE 1 */}
+          <div className="contenedor-explicacion-Conjunto2">
+          <p className="title-explicacion">Fundamento de la Logica de Conjuntos</p> <br></br>
+          <div className="contenedor-explicacion-img">
+            <div className="contenedor-explicacion2">
+              <p className="parrafo_explicacion">{`La Logica de conjuntos es uno de los pilares de las matemáticas. Proporciona un marco para definir y estudiar colecciones de objetos, que pueden ser números, puntos, funciones, etc.`}</p>{" "}
+              <br></br>
+              <p className="parrafo_explicacion">{`Sin una comprensión clara de los conjuntos, es difícil avanzar en otras áreas de las matemáticas.`}</p>{" "}
+              <br></br>
+              <div className="contenedor-contenido-ayuda-footer">
+                  <img src={logo} alt="img-logo" className="img-logo"></img>
+                  <p className="title-footer">Logica Conjuntos,</p>
+                  <p className="subtitle-footer">Matematicas Discretas</p>
+              </div>
+            </div>
+          </div>
+          </div>
+
+          {/* // CONTENIDO IMPORTANTE 2 */}
+          <div className="contenedor-explicacion-Conjunto3">
+          <p className="title-explicacion">Estructura y Organización de Datos</p> <br></br>
+          <div className="contenedor-explicacion-img">
+            <div className="contenedor-explicacion2">
+              <p className="parrafo_explicacion">{`En informática y en matemáticas discretas, la lógica de conjuntos ayuda a organizar y manipular datos de manera eficiente. `}</p>{" "}
+              <br></br>
+              <p className="parrafo_explicacion">{` Permite clasificar, filtrar y combinar datos mediante operaciones como unión, intersección y diferencia.`}</p>{" "}
+              <br></br>
+              <div className="contenedor-contenido-ayuda-footer">
+                  <img src={logo} alt="img-logo" className="img-logo"></img>
+                  <p className="title-footer">Logica Conjuntos,</p>
+                  <p className="subtitle-footer">Matematicas Discretas</p>
+              </div>
+            </div>
+          </div>
+          </div>
+
+          {/* // CONTENIDO IMPORTANTE 3 */}
+          <div className="contenedor-explicacion-Conjunto2">
+          <p className="title-explicacion">Base para el Análisis de Algoritmos</p> <br></br>
+          <div className="contenedor-explicacion-img">
+            <div className="contenedor-explicacion2">
+              <p className="parrafo_explicacion">{`La lógica de conjuntos es útil en el análisis de algoritmos, especialmente en la teoría de gráficos y la optimización.`}</p>{" "}
+              <br></br>
+              <p className="parrafo_explicacion">{`Muchas estructuras de datos (como listas, conjuntos y mapas) están basadas en operaciones de conjuntos.`}</p>{" "}
+              <br></br>
+              <div className="contenedor-contenido-ayuda-footer">
+                  <img src={logo} alt="img-logo" className="img-logo"></img>
+                  <p className="title-footer">Logica Conjuntos,</p>
+                  <p className="subtitle-footer">Matematicas Discretas</p>
+              </div>
+            </div>
+          </div>
+          </div>
+
+          {/* // CONTENIDO IMPORTANTE 4 */}
+          <div className="contenedor-explicacion-Conjunto3">
+          <p className="title-explicacion">Resolución de problemas</p> <br></br>
+          <div className="contenedor-explicacion-img">
+            <div className="contenedor-explicacion2">
+              <p className="parrafo_explicacion">{`Muchas técnicas de resolución de problemas en matemáticas y ciencias de la computación utilizan conceptos de la lógica de conjuntos.`}</p>{" "}
+              <br></br>
+              <p className="parrafo_explicacion">{`Por ejemplo, la identificación de conjuntos disjuntos, el uso de complementos y la comprobación de pertenencias son herramientas útiles para resolver problemas complejos.`}</p>{" "}
+              <br></br>
+              <div className="contenedor-contenido-ayuda-footer">
+                  <img src={logo} alt="img-logo" className="img-logo"></img>
+                  <p className="title-footer">Logica Conjuntos,</p>
+                  <p className="subtitle-footer">Matematicas Discretas</p>
+              </div>
+            </div>
+          </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };
