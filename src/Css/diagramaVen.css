@@ -6,8 +6,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
- background-color:  rgba(0, 56, 68, 1) ;
- /* border: 1px solid white; */
+  background-color: rgba(0, 56, 68, 1);
+  /* border: 1px solid white; */
 }
 
 .texto-interseccion {
@@ -40,16 +40,21 @@ circle {
   text-align: center;
   box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2);
 }
-.svg-diagrama{
+.svg-diagrama {
   overflow-x: auto;
   border: 1px solid white;
 }
-@media (max-width: 1024px){
+@media (width > 1300px) {
   .contenedor-diagrama {
     display: none;
   }
 }
-@media(width <= 768px){
+@media (max-width: 1024px) {
+  .contenedor-diagrama {
+    display: none;
+  }
+}
+@media (width <= 768px) {
   .contenedor-diagrama {
     display: none;
   }

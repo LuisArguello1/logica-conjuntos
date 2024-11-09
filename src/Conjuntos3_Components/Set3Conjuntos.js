@@ -106,7 +106,7 @@ const Set3Conjuntos = ({
             <div className="inputBox">
               {/* input Universo*/}
               <input
-                placeholder="Ej: 1,2,3,4,5"
+                placeholder="Ej: 1,2,3,4,5,6,7,8,9,0,11,12,13,14"
                 type="text"
                 required=""
                 value={Univers}
@@ -139,7 +139,7 @@ const Set3Conjuntos = ({
             <div className="inputBox">
               {/* input Conjunto C */}
               <input
-                placeholder="Ej: 3,4,5,6,7"
+                placeholder="Ej: 3,7,8,9,0,12,11"
                 type="text"
                 required=""
                 value={Elementos3}
