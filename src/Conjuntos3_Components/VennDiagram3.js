@@ -85,6 +85,7 @@ const VennDiagram3 = ({
     MostrarResultado && (
       <div className="contenedor-diagrama">
         <h2 style={{ color: "white" }}>Diagrama de Edwards-Venn</h2>
+        {/* Venn diagrama para computadora */}
         <svg width="80%" height="85%" className="svg-diagrama">
           {/* No pertenecen*/}
           <circle
@@ -241,6 +242,166 @@ const VennDiagram3 = ({
             </foreignObject>
           )}
         </svg>
+
+        {/* Ven diagrama para celular */}
+        <svg width="95%" height="85%" className="svg-diagrama2">
+          {/* No pertenecen*/}
+          <circle
+            cx="50"
+            cy="50"
+            r="7%"
+            fill="rgba(0, 0, 0, 0)"
+            onClick={() => handleClick("E")}
+            style={{ cursor: "pointer" }}
+          />
+          <text
+            x="50"
+            y="50"
+            className="texto-conjunto"
+            onClick={() => handleClick("E")}
+          >
+            ∉
+          </text>
+          {/* Círculo A */}
+          <circle
+            cx="210"
+            cy="190"
+            r="22%"
+            fill="rgba(223, 16, 16, 0.5)"
+            stroke="white"
+            strokeWidth="1"
+            onClick={() => handleClick("A")}
+            style={{ cursor: "pointer" }}
+          />
+          <text
+            x="210"
+            y="160"
+            className="texto-conjunto"
+            onClick={() => handleClick("A")}
+          >
+            A
+          </text>
+          {/* Círculo B */}
+          <circle
+            cx="150"
+            cy="300"
+            r="22%"
+            fill="rgba(0, 0, 255, 0.5)"
+            stroke="white"
+            strokeWidth="1"
+            onClick={() => handleClick("B")}
+            style={{ cursor: "pointer" }}
+          />
+          <text
+            x="120"
+            y="320"
+            className="texto-conjunto"
+            onClick={() => handleClick("B")}
+          >
+            B
+          </text>
+
+          {/* Círculo C */}
+          <circle
+            cx="270"
+            cy="300"
+            r="22%"
+            fill="rgba(23, 177, 105, 0.5)"
+            stroke="white"
+            strokeWidth="1"
+            onClick={() => handleClick("C")}
+            style={{ cursor: "pointer" }}
+          />
+          <text
+            x="310"
+            y="320"
+            className="texto-conjunto"
+            onClick={() => handleClick("C")}
+          >
+            C
+          </text>
+
+          {/* Intersección A B C*/}
+          <circle
+            cx="210"
+            cy="260"
+            r="6%"
+            fill="rgba(0, 0, 0, 0)" // Transparente para clic.
+            onClick={() => handleClick("InterseccionABC")}
+            style={{ cursor: "pointer" }}
+          />
+          <text
+            x="210"
+            y="265"
+            className="texto-conjunto-interseccionABC"
+            onClick={() => handleClick("InterseccionABC")}
+          >
+            A ∩ B ∩ C
+          </text>
+
+          {/* Intersección A B*/}
+          <circle
+            cx="155"
+            cy="230"
+            r="6%"
+            fill="rgba(0, 0, 0, 0)" // Transparente para clic.
+            onClick={() => handleClick("InterseccionAB")}
+            style={{ cursor: "pointer" }}
+          />
+          <text
+            x="155"
+            y="240"
+            className="texto-conjunto-interseccion"
+            onClick={() => handleClick("InterseccionAB")}
+          >
+            A ∩ B
+          </text>
+
+          {/* Intersección A C*/}
+          <circle
+            cx="265"
+            cy="230"
+            r="6%"
+            fill="rgba(0, 0, 0, 0)" // Transparente para clic.
+            onClick={() => handleClick("InterseccionAC")}
+            style={{ cursor: "pointer" }}
+          />
+          <text
+            x="265"
+            y="240"
+            className="texto-conjunto-interseccion"
+            onClick={() => handleClick("InterseccionAC")}
+          >
+            A ∩ C
+          </text>
+
+          {/* Intersección C B*/}
+          <circle
+            cx="210"
+            cy="330"
+            r="7%"
+            fill="rgba(0, 0, 0, 0)" // Transparente para clic.
+            onClick={() => handleClick("InterseccionBC")}
+            style={{ cursor: "pointer" }}
+          />
+          <text
+            x="210"
+            y="330"
+            className="texto-conjunto-interseccion"
+            onClick={() => handleClick("InterseccionBC")}
+          >
+            B ∩ C
+          </text>
+
+          {/* Mostrar mensaje de selección con contenido */}
+          {selected && (
+            <foreignObject x="40" y="420" width="330" height="300">
+              <div className="texto-hover">{obtenerContenido()}</div>
+            </foreignObject>
+          )}
+        </svg>
+
+
         <strong style={{ color: "white" }}>
           Haga clic en un conjunto para visualizar el contenido
           <img src={cursor} alt="svg-click" className="svg-click"></img>

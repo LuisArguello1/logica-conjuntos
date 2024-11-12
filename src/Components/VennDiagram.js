@@ -41,6 +41,7 @@ const VennDiagram = ({Universo = [], ConjuntoA = [], ConjuntoB = [] , MostrarRes
   return (
     (MostrarResultado && (
 
+      // VEN DIAGRAMA PARA COMPUTADORA
       <div className="contenedor-diagrama">
         <h2 style={{color: "white"}}>Diagrama de Edwards-Venn</h2>
         <svg width="50%" height="60%" className='svg-diagrama'>
@@ -102,6 +103,74 @@ const VennDiagram = ({Universo = [], ConjuntoA = [], ConjuntoB = [] , MostrarRes
           {/* Mostrar mensaje de selección con contenido */}
           {selected && (
             <foreignObject x="180" y="270" width="300" height="300">
+              <div className="texto-hover">
+                {obtenerContenido()}
+              </div>
+            </foreignObject>
+          )}
+        </svg>
+
+
+        {/* VENN DIAGRAMA PARA CELULAR */}
+        <svg width="95%" height="70%" className='svg-diagrama2'>
+          {/* Círculo Universo*/}
+          <circle
+            cx="30"
+            cy="30"
+            r="5%"
+            fill="rgba(0, 0, 0, 0)"
+            onClick={() => handleClick('E')}
+            style={{ cursor: 'pointer' }}
+          />
+          <text x="30" y="40" className="texto-conjunto" onClick={() => handleClick('E')}>
+            ∉
+          </text>
+          {/* Círculo A */}
+          <circle
+            cx="140"
+            cy="200"
+            r="25%"
+            fill="rgba(0, 0, 255, 0.5)"
+            stroke="white"          
+            strokeWidth="1"
+            onClick={() => handleClick('A')}
+            style={{ cursor: 'pointer' }}
+          />
+          <text x="120" y="200" className="texto-conjunto" onClick={() => handleClick('A')}>
+            A
+          </text>
+
+          {/* Círculo B */}
+          <circle
+            cx="260"
+            cy="200"
+            r="25%"
+            fill="rgba(23, 177, 105, 0.5)"
+            stroke="white"          
+            strokeWidth="1"
+            onClick={() => handleClick('B')}
+            style={{ cursor: 'pointer' }}
+          />
+          <text x="280" y="200" className="texto-conjunto" onClick={() => handleClick('B')}>
+            B
+          </text>
+
+          {/* Intersección */}
+          <circle
+            cx="200"
+            cy="200"
+            r="10%"
+            fill="rgba(0, 0, 0, 0)" // Transparente para clic.
+            onClick={() => handleClick('Interseccion')}
+            style={{ cursor: 'pointer' }}
+          />
+          <text x="200" y="200" className="texto-conjunto" onClick={() => handleClick('Interseccion')}>
+            A ∩ B
+          </text>
+
+          {/* Mostrar mensaje de selección con contenido */}
+          {selected && (
+            <foreignObject x="50" y="320" width="300" height="300">
               <div className="texto-hover">
                 {obtenerContenido()}
               </div>

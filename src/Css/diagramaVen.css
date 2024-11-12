@@ -44,6 +44,11 @@ circle {
   overflow-x: auto;
   border: 1px solid white;
 }
+.svg-diagrama2 {
+  overflow-x: auto;
+  /* border: 1px solid white; */
+  display: none;
+}
 @media (width > 1300px) {
   .contenedor-diagrama {
     display: none;
@@ -56,6 +61,16 @@ circle {
 }
 @media (width <= 768px) {
   .contenedor-diagrama {
+    display: flex;
+  }
+  .svg-diagrama2 {
+    overflow-x: auto;
+    /* border: 1px solid white; */
+    display: flex;
+  }
+  .svg-diagrama{
+    overflow-x: auto;
+    /* border: 1px solid white; */
     display: none;
   }
 }
